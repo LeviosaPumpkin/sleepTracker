@@ -1,0 +1,18 @@
+micronaut:
+  server:
+    port: 8081
+  application:
+    name: sleepstatistic
+  http:
+    services:
+      sleepservice:
+        urls:
+          - http://localhost:8080/sleep
+netty:
+  default:
+    allocator:
+      max-order: 3
+redis:
+  uri: redis://localhost
+  io-thread-pool-size: 2
+  computation-thread-pool-size: 2
