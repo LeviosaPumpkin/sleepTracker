@@ -16,3 +16,8 @@ redis:
   uri: redis://localhost
   io-thread-pool-size: 2
   computation-thread-pool-size: 2
+eureka:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"

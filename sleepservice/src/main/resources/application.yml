@@ -24,4 +24,8 @@ jpa:
           hbm2ddl:
             auto: update
           show_sql: true
-
+eureka:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"

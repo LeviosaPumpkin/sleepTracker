@@ -9,7 +9,7 @@ import leviosa.pumpkin.sleepstatistic.domain.SleepRecord;
 import java.util.Date;
 import java.util.List;
 
-@Client("http://localhost:8080")
+@Client(id = "sleepservice")
 public interface SleepServiceClient {
     @Get("/sleep/records")
     List<SleepRecord> findByUserIdAndDates(@QueryValue long userId,
