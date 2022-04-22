@@ -9,7 +9,10 @@
         </encoder>
     </appender>
 
-    <root level="info">
+    <root level="DEGUG">
         <appender-ref ref="STDOUT" />
     </root>
+
+    <logger name="leviosa.pumpkin.sleepstatistic.job" level="INFO"/>
+    <logger name="leviosa.pumpkin.sleepstatistic.httpclients" level="DEBUG"/>
 </configuration>
