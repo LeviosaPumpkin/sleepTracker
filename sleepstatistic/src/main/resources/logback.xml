@@ -15,4 +15,5 @@
 
     <logger name="leviosa.pumpkin.sleepstatistic.job" level="INFO"/>
     <logger name="leviosa.pumpkin.sleepstatistic.httpclients" level="DEBUG"/>
+    <logger name="io.micronaut.http" level="DEBUG"/>
 </configuration>

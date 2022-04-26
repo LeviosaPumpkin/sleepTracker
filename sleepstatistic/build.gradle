@@ -21,6 +21,7 @@ dependencies {
     implementation("io.micronaut.redis:micronaut-redis-lettuce")
     implementation("io.micronaut.discovery:micronaut-discovery-client")
     implementation("ch.qos.logback:logback-classic")
+    implementation("io.micronaut:micronaut-management:3.4.2")
 
     testImplementation("org.mockito:mockito-all:1.10.19")
     testImplementation("io.micronaut.test:micronaut-test-junit5")
