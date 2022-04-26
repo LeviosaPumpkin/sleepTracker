@@ -2,14 +2,18 @@ package leviosa.pumpkin.sleepservice.controller;
 
 import io.micronaut.core.convert.format.Format;
 import io.micronaut.http.annotation.*;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import leviosa.pumpkin.sleepservice.domain.SleepRecord;
 import leviosa.pumpkin.sleepservice.service.SleepService;
 
 import javax.inject.Inject;
+import java.security.Principal;
 import java.util.Date;
 import java.util.List;
 
 @io.micronaut.http.annotation.Controller("/sleep")
+@Secured(SecurityRule.IS_AUTHENTICATED)
 public class Controller {
     @Inject
     private SleepService sleepService;
@@ -27,7 +31,7 @@ public class Controller {
     }
 
     @Get("/records/{id}")
-    public SleepRecord get(@PathVariable long id) {
+    public SleepRecord get(@PathVariable long id, Principal principal) {
         return sleepService.get(id);
     }
 

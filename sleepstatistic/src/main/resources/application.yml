@@ -8,6 +8,9 @@ micronaut:
       sleepservice:
         urls:
           - http://localhost:8080/sleep
+      auth:
+        urls:
+          - http://localhost:8082
 netty:
   default:
     allocator:
