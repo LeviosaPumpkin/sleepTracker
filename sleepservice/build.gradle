@@ -1,6 +1,7 @@
 plugins {
     id("io.micronaut.application") version "3.3.2"
     id("org.flywaydb.flyway") version "8.5.8"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 version = "0.1"
@@ -57,7 +58,7 @@ micronaut {
 }
 
 flyway {
-    url = 'jdbc:postgresql://localhost:5432/postgres'
+    url = 'jdbc:postgresql://db:5432/postgres'
     user = 'postgres'
     password = '1234'
 }

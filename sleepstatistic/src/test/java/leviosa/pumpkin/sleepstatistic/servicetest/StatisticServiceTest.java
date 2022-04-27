@@ -59,7 +59,7 @@ public class StatisticServiceTest {
         List<SleepRecord> list = List.of(
                 new SleepRecord(2, 1, new Date(1649278800000L), 7),
                 new SleepRecord(3, 1, new Date(1649365200000L), 8));
-        when(sleepServiceClient.findByUserIdAndDates(anyLong(), any(), any())).thenReturn(list);
+        //when(sleepServiceClient.findByUserIdAndDates(anyLong(), any(), any())).thenReturn(list);
 
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
         Date dateFrom = format.parse("2022-04-06T22:00:00.000Z");

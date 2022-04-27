@@ -15,7 +15,7 @@ netty:
       max-order: 3
 datasources:
   default:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://db:5432/postgres
     driverClassName: org.postgresql.Driver
     username: postgres
     password: '1234'
@@ -33,7 +33,9 @@ jpa:
             auto: update
           show_sql: true
 eureka:
+  instance:
+    hostname: eureka-server
   client:
     registration:
       enabled: true
-    defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"
+    defaultZone: http://eureka-server:8761/eureka

@@ -1,9 +1,15 @@
 server:
   port: ${PORT:8761}
-
+spring:
+  application:
+    name: eureka-server
 eureka:
+  instance:
+    hostname: eureka-server
   client:
     registerWithEureka: false
     fetchRegistry: false
     server:
       waitTimeInMsWhenSyncEmpty: 0
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka
