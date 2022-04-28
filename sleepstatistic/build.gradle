@@ -1,5 +1,6 @@
 plugins {
     id("io.micronaut.application") version "3.3.2"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 version = "0.1"
@@ -23,6 +24,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-management:3.4.2")
     implementation("io.micronaut.security:micronaut-security-jwt")
+    implementation("io.micronaut.cache:micronaut-cache-caffeine")
 
     testImplementation("org.mockito:mockito-all:1.10.19")
     testImplementation("io.micronaut.test:micronaut-test-junit5")

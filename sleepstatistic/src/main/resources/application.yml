@@ -7,23 +7,34 @@ micronaut:
     services:
       sleepservice:
         urls:
-          - http://localhost:8080/sleep
+          - http://sleep-service:8080
       auth:
         urls:
-          - http://localhost:8082
+          - http://auth-service:8082
+  security:
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"'
+  caches:
+    my-cache:
+      maximumSize: 20
 netty:
   default:
     allocator:
       max-order: 3
 redis:
-  uri: redis://localhost
+  uri: redis://redis:6379
   io-thread-pool-size: 2
   computation-thread-pool-size: 2
 eureka:
   client:
     registration:
       enabled: true
-    defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"
+    defaultZone: http://eureka-server:8761/eureka
 endpoints:
   beans:
     enabled: true

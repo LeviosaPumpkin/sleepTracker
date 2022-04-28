@@ -20,6 +20,29 @@ services:
       - eureka-server
     links:
       - eureka-server
+  auth-service:
+    image: 'auth-server'
+    build:
+      context: .
+      dockerfile: auth/Dockerfile
+    ports:
+        - "8082:8082"
+    depends_on:
+      - eureka-server
+  statistic-service:
+    image: 'statisic-service'
+    build:
+      context: .
+      dockerfile: sleepstatistic/Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+      - eureka-server
+      - sleep-service
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
   db:
     image: "postgres"
     ports:
@@ -31,4 +54,4 @@ services:
   redis:
     image: redis:3.0.6
     ports:
-      - "6378:6378"
+      - "6379:6379"

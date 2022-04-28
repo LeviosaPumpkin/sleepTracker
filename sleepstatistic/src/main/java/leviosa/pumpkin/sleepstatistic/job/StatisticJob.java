@@ -25,7 +25,7 @@ public class StatisticJob {
     void execute() throws ParseException {
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
         Date dateFrom = format.parse("2022-04-06T22:00:00.000Z");
-        Date dateTo = format.parse("2022-04-08T22:00:00.000Z");
+        Date dateTo = format.parse("2022-04-12T22:00:00.000Z");
         List<Integer> userIds = List.of(1);
         log.info("Job started");
         userIds.forEach(userId -> {
